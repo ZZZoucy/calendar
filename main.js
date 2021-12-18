@@ -8,7 +8,7 @@ get("#prevMonth").onclick = () => {
     render(new Date(firstDay - 86400 * 1000));
 };
 get("#nextMonth").onclick = () => {
-    const nextMonthFirstDay = new Date(currentTime.getUTCFullYear(), currentTime.getMonth() + 1, 1);
+    const nextMonthFirstDay = new Date(currentTime.getFullYear(), currentTime.getMonth() + 1, 1);
     render(nextMonthFirstDay);
 };
 get("#today").onclick = () => {
