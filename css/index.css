@@ -45,6 +45,9 @@
     border-radius: 8px;
     outline: 1px solid #fed32c;
 }
+.calender-days-disabled {
+    color: #999;
+}
 .calender-actions {
     display: flex;
     justify-content: space-between;

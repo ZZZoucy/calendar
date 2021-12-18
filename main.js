@@ -46,12 +46,16 @@ function render(time) {
         const lastDayWeek = lastDay.getDay();
         const days = get("#days");
         days.innerHTML = "";
+        let n = 0;
+
         // 每个月1号之前的铺垫
         for (let i = 1; i < firstDayWeek; i++) {
             const li = document.createElement("li");
             const d = new Date(firstDay - 86400 * 1000 * i);
             li.textContent = d.getDate();
+            li.classList.add("calender-days-disabled");
             days.prepend(li);
+            n += 1;
         }
 
         // 每个月1号从星期几开始
@@ -74,15 +78,19 @@ function render(time) {
                 selectedLi = li;
             };
             days.append(li);
+            n += 1;
         }
 
         // 每个月最后一天之后的铺垫
-        for (let i = lastDayWeek + 1; i <= 7; i++) {
+        let i = lastDayWeek + 1;
+        for (let j = 0; j < 42 - n; j++) {
             const delta = i - lastDayWeek;
             const li = document.createElement("li");
             const d = new Date(lastDay - 0 + 86400 * 1000 * delta);
             li.textContent = d.getDate();
+            li.classList.add("calender-days-disabled");
             days.append(li);
+            i++;
         }
     }
 }
