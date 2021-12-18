@@ -2,10 +2,13 @@ let currentTime = new Date();
 render(currentTime);
 
 get("#prevMonth").onclick = () => {
-    render(new Date(currentTime - 86400 * 1000 * 30));
+    // 上个月 = 这个月月初 - 1天
+    const firstDay = new Date(currentTime.getUTCFullYear(), currentTime.getMonth(), 1);
+    render(new Date(firstDay - 86400 * 1000));
 };
 get("#nextMonth").onclick = () => {
-    render(new Date(currentTime - 0 + 86400 * 1000 * 30));
+    const nextMonthFirstDay = new Date(currentTime.getUTCFullYear(), currentTime.getMonth() + 1, 1);
+    render(nextMonthFirstDay);
 };
 get("#today ").onclick = () => {
     render(new Date());
