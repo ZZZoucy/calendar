@@ -12,12 +12,13 @@
     <body>
         <header class="siteHeader">
             <h1>我的日历</h1>
+            <p class="message">小圆点表示有日程安排</p>
         </header>
-        <div class="calender">
-            <div class="calender-header">
+        <div class="calendar">
+            <div class="calendar-header">
                 <time id="time"></time>
             </div>
-            <ol class="calender-weekdays">
+            <ol class="calendar-weekdays">
                 <li>一</li>
                 <li>二</li>
                 <li>三</li>
@@ -26,17 +27,40 @@
                 <li>六</li>
                 <li>日</li>
             </ol>
-            <ol class="calender-days" id="days"></ol>
-            <div class="calender-actions">
-                <div class="calender-actions-left">
+            <ol class="calendar-days" id="days"></ol>
+            <div class="calendar-actions">
+                <div class="calendar-actions-left">
                     <button id="today">今天</button>
                 </div>
-                <div class="calender-actions-right">
+                <div class="calendar-actions-right">
                     <button id="prevMonth">上个月</button>
                     <button id="nextMonth">下个月</button>
                 </div>
             </div>
         </div>
+        <div class="events-wrapper">
+            <h2>今日日程</h2>
+            <div class="events" id="events"></div>
+        </div>
+        <script>
+            window.data = {
+                "2021-11-13": ["写作业"],
+                "2021-11-16": ["上课"],
+                "2021-12-14": ["写报告"],
+                "2021-12-11": ["上课", "写博客"],
+                "2021-12-20": ["上课", "写作业"],
+                "2021-10-13": ["写作业"],
+                "2021-11-28": ["上课"],
+                "2021-12-1": ["写报告"],
+                "2021-12-5": ["上课", "写博客"],
+                "2021-12-18": ["四六级"],
+                "2021-12-28": ["上课", "写作业"],
+                "2022-1-3": ["上课"],
+                "2022-1-9": ["上课", "看电影"],
+                "2022-1-21": ["剧本杀", "聚餐"],
+                "2022-1-26": ["期末考试"],
+            };
+        </script>
         <script src="main.js"></script>
     </body>
 </html>
