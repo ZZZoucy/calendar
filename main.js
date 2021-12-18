@@ -53,9 +53,23 @@ function render(time) {
 
         // 每个月1号从星期几开始
         const daysCount = lastDayDate;
+        const now = new Date();
+        let selectedLi;
         for (let i = 1; i <= daysCount; i++) {
             const li = document.createElement("li");
             li.textContent = i;
+            // 给 今天 加一个选中样式
+            if (i === now.getDate() && month === now.getMonth() + 1 && year === now.getFullYear()) {
+                li.classList.add("calender-days-today");
+            }
+            // 选中某一天，就加个边框样式
+            li.onclick = () => {
+                if (selectedLi) {
+                    selectedLi.classList.remove("calender-days-selected");
+                }
+                li.classList.add("calender-days-selected");
+                selectedLi = li;
+            };
             days.append(li);
         }
 

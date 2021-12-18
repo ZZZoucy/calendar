@@ -37,6 +37,14 @@
     height: 42px;
     line-height: 42px;
 }
+.calender-days-today {
+    background-color: #fed32c;
+    border-radius: 8px;
+}
+.calender-days-selected {
+    border-radius: 8px;
+    outline: 1px solid #fed32c;
+}
 .calender-actions {
     display: flex;
     justify-content: space-between;
